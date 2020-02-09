@@ -1,27 +1,27 @@
 <div class="row">
   <div class="col-md-3">
-    <%= render 'venue_menu' %>
+    <%= render 'home_menu' %>
   </div>
   <div class="col-md-9">
     <div class="panel panel-default">
 
       <div class="panel-heading">
-        Location
+        Pricing
       </div>
 
       <div class="panel-body">
         <div class="container">
-          <%= form_for @venue do |f| %>
-            
+          <%= form_for @home do |f| %>
+
             <div class="container">
               <div class="row">
                 <div class="form-group">
-                  <label>Address</label>
-                  <%= f.text_field :address, placeholder: "Where is your venue located?", class: "form-control", required: true, id: "autoaddress" %>
+                  <label>Price</label>
+                  <%= f.text_field :price, placeholder: "eg: $100", class: "form-control", required: true %>
                 </div>
               </div>
-            </div>
-            
+            </div>  
+
             <div class="text-center">
               <%= f.submit "Save", class: "btn btn-form" %>
             </div>
@@ -33,9 +33,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  $(function() {
-    $("#autoaddress").geocomplete();
-  })
-</script>

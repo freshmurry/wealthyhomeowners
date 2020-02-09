@@ -1,7 +1,7 @@
 <!-- Image -->
 <div class="row">
   <div class="col-md-12">
-    <%= image_tag @venue.cover_photo(nil), width: "100%" %>
+    <%= image_tag @home.cover_photo(nil), width: "100%" %>
   </div>
 </div>
 <br/>
@@ -14,21 +14,21 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9">
-        <h2><%= @venue.listing_name %></h2>
-            <%= @venue.address %>
+        <h2><%= @home.listing_name %></h2>
+            <%= @home.address %>
         </div>&nbsp;
 
         <div class="col-md-3 text-center">
-          <%= image_tag avatar_url(@venue.user), class: "img-circle avatar-large" %><br/>
-          <%= link_to user_path(@venue.user) do %>
-          <%= @venue.user.fullname %>
+          <%= image_tag avatar_url(@home.user), class: "img-circle avatar-large" %><br/>
+          <%= link_to user_path(@home.user) do %>
+          <%= @home.user.fullname %>
           <% end %>
           <div>
             <span id="average_rating"></span>
           </div>
           <div class="center">
             <% if current_user && current_user != @user %>
-              <%= link_to "Message Host", conversations_path(sender_id: current_user.id, recipient_id: @venue.user.id), method: :post, class: "btn btn-default" %>
+              <%= link_to "Message Host", conversations_path(sender_id: current_user.id, recipient_id: @home.user.id), method: :post, class: "btn btn-default" %>
             <% end %>
           </div>
         </div>
@@ -36,7 +36,7 @@
     </div>  
     <hr/>
       
-    <!-- Venue Info -->
+    <!-- Home Info -->
     <div class="container">
       <div class="row text-babu">
         <div class="row text-center row-space-1">
@@ -55,10 +55,10 @@
         </div>
     
         <div class="row text-center">
-          <div class="col-md-3"><%= @venue.event_type %></div>
-          <div class="col-md-3"><%= @venue.venue_type %></div>
-          <div class="col-md-3"><%= @venue.accommodate %></div>
-          <div class="col-md-3"><%= @venue.rest_room %></div>
+          <div class="col-md-3"><%= @home.event_type %></div>
+          <div class="col-md-3"><%= @home.home_type %></div>
+          <div class="col-md-3"><%= @home.accommodate %></div>
+          <div class="col-md-3"><%= @home.rest_room %></div>
         </div>
       </div>
     </div>  
@@ -68,10 +68,10 @@
     <div class="container">
       <div class="row">
         <div class="panel panel-default">
-          <div class="panel-heading">About This Venue</div>
+          <div class="panel-heading">About This Home</div>
           <div class="panel-body">
             <div class="container">
-              <p><%= @venue.summary %></p>
+              <p><%= @home.summary %></p>
             </div>  
           </div>
         </div>
@@ -79,42 +79,42 @@
     </div>  
     <br/>
   
-    <!-- AMENITIES --> 
+    <!-- FEATURES --> 
     <div class="container">
       <div class="row">
         <div class="panel panel-default">
-          <div class="panel-heading">Amenities</div>
+          <div class="panel-heading">Features</div>
           <div class="panel-body">
             <div class="container">
               <div class="col-md-12">
                 <div class="row">
                   <div class="col-xs-4 col-sm-4 col-md-4">
-                    <ul class="amenities">
-                      <li class="<%= 'text-line-through' if !@venue.is_kitchen %>">Kitchen</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_tables %>">Tables</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_chairs %>">Chairs</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_microphone %>">Microphone</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_custodial %>">Custodial Services</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_accessible %>">Accessible</li>
+                    <ul class="features">
+                      <li class="<%= 'text-line-through' if !@home.is_kitchen %>">Kitchen</li>
+                      <li class="<%= 'text-line-through' if !@home.is_tables %>">Tables</li>
+                      <li class="<%= 'text-line-through' if !@home.is_chairs %>">Chairs</li>
+                      <li class="<%= 'text-line-through' if !@home.is_microphone %>">Microphone</li>
+                      <li class="<%= 'text-line-through' if !@home.is_custodial %>">Custodial Services</li>
+                      <li class="<%= 'text-line-through' if !@home.is_accessible %>">Accessible</li>
                     </ul>
                   </div>
                   <div class="col-xs-4 col-sm-4 col-md-4">
-                    <ul class="amenities">
-                      <li class="<%= 'text-line-through' if !@venue.is_projector %>">Projector</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_bar %>">Bar</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_self_parking %>">Self-Parking</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_valet_parking %>">Valet Parking</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_tablecloths %>">Tablecloths</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_wheelchair %>">Wheelchair</li>
+                    <ul class="features">
+                      <li class="<%= 'text-line-through' if !@home.is_projector %>">Projector</li>
+                      <li class="<%= 'text-line-through' if !@home.is_bar %>">Bar</li>
+                      <li class="<%= 'text-line-through' if !@home.is_self_parking %>">Self-Parking</li>
+                      <li class="<%= 'text-line-through' if !@home.is_valet_parking %>">Valet Parking</li>
+                      <li class="<%= 'text-line-through' if !@home.is_tablecloths %>">Tablecloths</li>
+                      <li class="<%= 'text-line-through' if !@home.is_wheelchair %>">Wheelchair</li>
                     </ul>
                   </div>
                   <div class="col-xs-4 col-sm-4 col-md-4">
-                    <ul class="amenities">
-                      <li class="<%= 'text-line-through' if !@venue.is_garage_parking %>">Garage Parking</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_air %>">A/C</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_heating %>">Heating</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_wifi %>">Wifi</li>
-                      <li class="<%= 'text-line-through' if !@venue.is_stage %>">Stage</li>
+                    <ul class="features">
+                      <li class="<%= 'text-line-through' if !@home.is_garage_parking %>">Garage Parking</li>
+                      <li class="<%= 'text-line-through' if !@home.is_air %>">A/C</li>
+                      <li class="<%= 'text-line-through' if !@home.is_heating %>">Heating</li>
+                      <li class="<%= 'text-line-through' if !@home.is_wifi %>">Wifi</li>
+                      <li class="<%= 'text-line-through' if !@home.is_stage %>">Stage</li>
                     </ul>
                   </div>
                 </div>
@@ -184,7 +184,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwN_tpAAKnHhy14HzNqK-XeuarVJhNHg8"></script>
         <script>
          function initialize() {
-            var location = {lat: <%= @venue.latitude %>, lng: <%= @venue.longitude %>};
+            var location = {lat: <%= @home.latitude %>, lng: <%= @home.longitude %>};
             var map = new google.maps.Map(document.getElementById('map'), {
               center: location,
               zoom: 12
@@ -196,7 +196,7 @@
             });
     
             var infoWindow = new google.maps.InfoWindow({
-              content: '<div id="content"><%= image_tag @venue.cover_photo(:medium) %></div>'
+              content: '<div id="content"><%= image_tag @home.cover_photo(:medium) %></div>'
             });
     
             infoWindow.open(map, marker);
@@ -209,20 +209,20 @@
     </div>  
     <hr/>
 
-    <!-- NEAR BY VENUES -->
+    <!-- NEAR BY HOMES  -->
     <div class="panel panel-default">
-      <div class="panel-heading">Nearby Venue Spaces</div>
-        <% for venue in @venue.nearbys(10) %>
+      <div class="panel-heading">Nearby Homes</div>
+        <% for home in @home.nearbys(10) %>
       <div class="col-md-4">
         <div class="panel panel-default">
           <div class="panel-heading preview">
-            <%= image_tag venue.cover_photo(:medium) %>
+            <%= image_tag home.cover_photo(:medium) %>
           </div>
               
           <div class="panel-body">
             <div class="container">
-              <%= link_to venue.listing_name, venue %><br/>
-              (<%= venue.distance.round(2) %> miles away)
+              <%= link_to home.listing_name, home %><br/>
+              (<%= home.distance.round(2) %> miles away)
             </div>
           </div>
         </div>  
@@ -242,6 +242,6 @@
   $('#average_rating').raty({
     path: '/assets',
     readOnly: true,
-    score: <%= @venue.average_rating %>
+    score: <%= @home.average_rating %>
   });
 </script>

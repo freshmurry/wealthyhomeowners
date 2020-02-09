@@ -15,9 +15,9 @@ class MessagesController < ApplicationController
     @message = @conversation.messages.new(message_params)
     @messages = @conversation.messages.order("created_at DESC")
 
-    # if current_user == venue.user
+    # if current_user == home.user
     #   flash[:alert] = "You cannot send a message to yourself!"
-    #   redirect_to venue
+    #   redirect_to home
     # end
       
     if @message.save

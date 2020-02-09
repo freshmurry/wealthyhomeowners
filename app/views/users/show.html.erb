@@ -47,32 +47,32 @@
     
     <!-- YOUR LISTNGS -->
     <div class="panel panel-default">
-      <div class="panel-heading">Listings (<%= @venues.length %>)</div>
+      <div class="panel-heading">Listings (<%= @homes.length %>)</div>
         <div class="panel-body">
           <div class="container">
-            <%= render partial: "venues/venues_list", locals: {venues: @venues} %>
+            <%= render partial: "homes/homes_list", locals: {homes: @homes} %>
           </div>
         </div>
     </div>
     
     <!-- YOUR REVIEWS -->
-    <div class="panel panel-default">
-      <div class="panel-heading">Reviews from Guest (<%= @guest_reviews.count %>)</div>
-        <div class="container">
-          <div class="panel-body">
-            <%= render "reviews/guest_list" %>
-          </div>
-        </div>  
-    </div>
+    <!--<div class="panel panel-default">-->
+    <!--  <div class="panel-heading">Reviews from Guest (< @guest_reviews.count %>)</div>-->
+    <!--    <div class="container">-->
+    <!--      <div class="panel-body">-->
+    <!--        < render "reviews/guest_list" %>-->
+    <!--      </div>-->
+    <!--    </div>  -->
+    <!--</div>-->
 
-    <div class="panel panel-default">
-      <div class="panel-heading">Reviews from Host (<%= @host_reviews.count %>)</div>
-        <div class="container">
-          <div class="panel-body">
-            <%= render "reviews/host_list" %>
-          </div>
-        </div>  
-    </div>
+    <!--<div class="panel panel-default">-->
+    <!--  <div class="panel-heading">Reviews from Host (< @host_reviews.count %>)</div>-->
+    <!--    <div class="container">-->
+    <!--      <div class="panel-body">-->
+    <!--        < render "reviews/host_list" %>-->
+    <!--      </div>-->
+    <!--    </div>  -->
+    <!--</div>-->
 
   </div>
 </div>

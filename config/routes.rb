@@ -13,13 +13,13 @@ Rails.application.routes.draw do
      end
    end
 
-   resources :venues, except: [:edit, :destroy] do		
+   resources :homes, except: [:edit, :destroy] do		
      member do		
        get 'listing'
        get 'pricing'
        get 'description'
        get 'photo_upload'
-       get 'amenities'
+       get 'features'
        get 'location'
        get 'preload'
        get 'preview'

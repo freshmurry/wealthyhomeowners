@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "ShindigSpace", root_path, class: "navbar-brand" %>
+      <%= link_to "WealthyHomeowners", root_path, class: "navbar-brand" %>
       <!--< link_to image_tag("icon.svg", alt: "logo"), root_path, class: "navbar-brand" %>-->
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -22,7 +22,7 @@
       <ul class="nav navbar-nav navbar-right">
         <!--<li>-->
         <!--  <button class="btn btn-form btn-small">-->
-        <!--    < link_to "List Your Space", new_venue_path, style: "color: white; text-decoration: none;" %>-->
+        <!--    < link_to "List Your Space", new_home_path, style: "color: white; text-decoration: none;" %>-->
         <!--  </button>-->
         <!--</li>-->
           
@@ -37,7 +37,7 @@
         <% else %>
           <li>
             <button class="btn btn-form btn-small">
-              <%= link_to "List a Space", new_venue_path, style: "color: white; text-decoration: none;" %>
+              <%= link_to "List a Space", new_home_path, style: "color: white; text-decoration: none;" %>
             </button>
           </li>
           <li>
@@ -55,8 +55,8 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Dashboard", dashboard_path %></li>
-              <li><%= link_to "Manage Listing", venues_path %></li>
-              <li><%= link_to "List A Space", new_venue_path %></li>
+              <li><%= link_to "Manage Listing", homes_path %></li>
+              <li><%= link_to "List A Space", new_home_path %></li>
               <li><%= link_to "Past Spaces", past_spaces_path %></li>
               <li><%= link_to "Reservations", your_reservations_path %></li>
               <li role="separator" class="divider"></li>
@@ -75,9 +75,9 @@
       <div class="container">
         <ul class="nav navbar-nav">
           <li <% if current_page?(dashboard_path) %> class="active" <% end %> ><%= link_to "Dashboard", dashboard_path %></li>
-          <li <% if current_page?(venues_path) %> class="active" <% end %> ><%= link_to "Manage Listings", venues_path %></li>
+          <li <% if current_page?(homes_path) %> class="active" <% end %> ><%= link_to "Manage Listings", homes_path %></li>
           <li <% if current_page?(conversations_path) %> class="active" <% end %> ><%= link_to "Messages", conversations_path %></li>
-          <li <% if current_page?(revenues_path) %> class="active" <% end %> ><%= link_to "Revenues", revenues_path %></li>
+          <li <% if current_page?(revenues_path) %> class="active" <% end %> ><%= link_to "Revenues", rehomes_path %></li>
           <li <% if current_page?(host_calendar_path) %> class="active" <% end %> ><%= link_to "Host Calendar", host_calendar_path %></li>
           <li <% if current_page?(payment_path) %> class="active" <% end %> ><%= link_to "Account Settings", payment_path %></li>
         </ul>

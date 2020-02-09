@@ -1,11 +1,11 @@
 <div class="panel panel-default" style="margin-right: -45px; margin-left: -45px;">
   <div class="panel-heading">
-    Create your Venue Space
+    Create
   </div>
   <div class="panel-body">
     <div class="container">
 
-      <%= form_for @venue, html: {multipart: true} do |f| %>
+      <%= form_for @home, html: {multipart: true} do |f| %>
       
           <div class="col-md-4 select">
             <div class="form-group">
@@ -26,26 +26,25 @@
           
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Venue Type</label>
-              <%= f.select :venue_type, [["Event Space", "Event Space"],["Loft", "Loft"], ["Hotel", "Hotel"], ["Church", "Church"], ["Park District", "Park District"], ["Town Hall", "Town Hall"], ["Parking Lot", "Parking Lot"], ["Back Yard", "Back Yard"], ["Vine Yard", "Vine Yard"], ["Golf Course", "Gold Course"], 
-                ["Warehouse", "Warehouse"], ["Art Gallery", "Art Gallery"], ["Boutique/Clothing Store", "Boutique/Clothing Store"], ["Other", "Other"]],
-                id: "venue_type", prompt: "Select...", class: "form-control" %>
+              <label>Home Type</label>
+              <%= f.select :home_type, [["Single Family", "Single Family"],["Loft", "Loft"], ["Condo", "Condo"]],
+                id: "home_type", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
           
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Rest Rooms</label>
+              <label>Bathrooms</label>
               <%= f.select :rest_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]], id: "rest_room", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
           
-          <div class="col-md-4 select">
-            <div class="form-group">
-              <label>Booking Type</label>
-              <%= f.select :instant, Venue.instants.map {|key,value| [key.humanize, key]}, selected: 'Instant', prompt: "Select...", class: "form-control" %>
-            </div>
-          </div>
+          <!--<div class="col-md-4 select">-->
+          <!--  <div class="form-group">-->
+          <!--    <label>Booking Type</label>-->
+          <!--    < f.select :instant, Home.instants.map {|key,value| [key.humanize, key]}, selected: 'Instant', prompt: "Select...", class: "form-control" %>-->
+          <!--  </div>-->
+          <!--</div>-->
           
         <div class="col-md-12"><%= f.submit "Create My Listing", class: "btn btn-normal" %></div>
 

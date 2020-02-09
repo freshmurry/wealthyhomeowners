@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-3">
     <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "Your Listings", venues_path, class: "sidebar-link active" %></li>
+      <li class="sidebar-item"><%= link_to "Your Listings", homes_path, class: "sidebar-link active" %></li>
       <li class="sidebar-item"><%= link_to "Your Reservations", your_reservations_path, class: "sidebar-link" %></li>
       <li class="sidebar-item"><%= link_to "Past Spaces", past_spaces_path, class: "sidebar-link" %></li>
     </ul>
@@ -13,18 +13,18 @@
       </div>
       <div class="panel-body">
         <div class="container">
-          <% @venues.each do |venue| %>
+          <% @homes.each do |home| %>
             <div class="container-fluid">
               <div class="row">
                 <div class="container-fluid">
                   <div class="col-md-2">
-                    <%= image_tag venue.cover_photo(:thumb) %>
+                    <%= image_tag home.cover_photo(:thumb) %>
                   </div>
                   <div class="col-md-7">
-                    <h5><%= venue.listing_name %></h5>
+                    <h5><%= home.listing_name %></h5>
                   </div>
                   <div class="col-md-2">
-                    <%= link_to "Update", listing_venue_path(venue), class: "btn btn-form" %>
+                    <%= link_to "Update", listing_home_path(home), class: "btn btn-form" %>
                   </div>
                 </div>  
               </div>  

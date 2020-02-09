@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-3">
     <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "Your Listings", venues_path, class: "sidebar-link" %></li>
+      <li class="sidebar-item"><%= link_to "Your Listings", homes_path, class: "sidebar-link" %></li>
       <li class="sidebar-item"><%= link_to "Your Reservations", your_reservations_path, class: "sidebar-link" %></li>
       <li class="sidebar-item"><%= link_to "Past Spaces", past_spaces_path, class: "sidebar-link active" %></li>
     </ul>
@@ -22,17 +22,17 @@
               </div>
               <div class="col-md-2">
                 <div class="panel-heading-preview">
-                  <%= link_to venue_path(space.venue) do %>
-                    <%= image_tag space.venue.cover_photo(:thumb) %>
+                  <%= link_to home_path(space.home) do %>
+                    <%= image_tag space.home.cover_photo(:thumb) %>
                   <% end %>
                 </div>  
               </div>
               <div class="col-md-5">
-                <%= link_to space.venue.listing_name, venue_path(space.venue) %><br/>
+                <%= link_to space.home.listing_name, home_path(space.home) %><br/>
                 <span>
-                  <%= image_tag (space.venue.user.image), class: "img-circle avatar-small" %>
-                  <%= link_to user_path(space.venue.user) do %>
-                  <%= space.venue.user.fullname %>
+                  <%= image_tag (space.home.user.image), class: "img-circle avatar-small" %>
+                  <%= link_to user_path(space.home.user) do %>
+                  <%= space.home.user.fullname %>
                   <% end %>
                 </span>
               </div>

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> ShindigSpace | Event Venue Space Rentals</title>
+    <title> WealthyHomeowners | Homes of The Well To Do</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnqDrT86OzRZVorExsMjFhYdp0TTOKQpE&libraries=places"></script> -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnqDrT86OzRZVorExsMjFhYdp0TTOKQpE&callback=initMap"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=[PLACE CODE HERE]&callback=initMap"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
    
     <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu|Cabin" rel="stylesheet">
@@ -19,21 +18,21 @@
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
 
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-   	<meta name="author" content="Event Space Rentals" />
-    <meta name="keywords" content="Event Space, Venue Space, Event Venue Space, Event Venue Space Rentals, Venue Space Rentals, Chicago Event Space Rentals, Chicago Venue Space Rentals, Chicago Event Venue Space Rentals, Best Chicago Event Venue Space Rentals, Best Chicago Venue Space Rentals, Atlanta Event Space Rentals, Atlanta Event Venue Space Rentals, Best Atlanta Event Space Rentals, Best Atlanta Event Venue Space Rentals, Bible Way Ministries, Pastor Wilson, Pastor Wilson Eating the Box, Texarkana TX" />
-    <meta name="description" content="Looking for an Event Venue Space? ShindigSpace has hidden gems that are great for any event, wedding, birthday party, baby shower, surprise wedding proposal, etc. Event space owners can list their space to rent by the day.">
-    <meta name="google-site-verification" content="t_30v5muVVio78M0KZC1lucXkfJaScEyui3h_w9TMmo" />
-    <meta property="og:site_name" content="ShindigSpace" />
-    <meta property="og:url" content="https://shindigspace.com" />
-    <meta property="og:title" content="ShindigSpace | Event Venue Spaces" />
-    <meta property="og:description" content="EEvent Space, Venue Space, Event Venue Space, Event Venue Space Rentals, Venue Space Rentals, Chicago Event Space Rentals, Chicago Venue Space Rentals, Chicago Event Venue Space Rentals, Best Chicago Event Venue Space Rentals, Best Chicago Venue Space Rentals, Atlanta Event Space Rentals, Atlanta Event Venue Space Rentals, Best Atlanta Event Space Rentals, Best Atlanta Event Venue Space Rentals" />
+   	<meta name="author" content="WealthyHomeowners" />
+    <meta name="keywords" content="" />
+    <meta name="description" content=" ">
+    <meta name="google-site-verification" content=" " />
+    <meta property="og:site_name" content="WealthyHomeowners" />
+    <meta property="og:url" content="https://wealthyhomeowners.herokuapp.com" />
+    <meta property="og:title" content="WealthyHomeowners | Homes of The Well To Do" />
+    <meta property="og:description" content=" " />
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content="https://s3-us-east-2.amazonaws.com/shindigspace/photos/images/000/000/004/original/B51AE513-3887-4F41-87C9-C863915871BC.jpeg?1520046390" />
+    <meta property="og:image" content=" " />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content="https://shindigspace.com">
-    <meta name="twitter:title" content="Event Venue Space Rentals" />
-    <meta name="twitter:image" content="https://s3-us-east-2.amazonaws.com/shindigspace/photos/images/000/000/004/original/B51AE513-3887-4F41-87C9-C863915871BC.jpeg?1520046390" />
+    <meta name="twitter:url" content="https://wealthyhomeowners.herokuapp.com">
+    <meta name="twitter:title" content="WealthyHomeowners" />
+    <meta name="twitter:image" content=" " />
     
     <script type="text/javascript" async="" src="https://secure.quantserve.com/quant.js"></script>
     <script type="text/javascript" async="" src="https://www.googleadservices.com/pagead/conversion_async.js"></script>
@@ -41,8 +40,6 @@
 
   </head>
   
-  <!--<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='09bdabf2578c8401dc4323a8ecdc4e842a7037b046fdb49e40d66e43e9237c17';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>-->
-
   <body>
     
     <%= render 'shared/navbar' %>
@@ -56,23 +53,11 @@
     	<%= yield %>
     </div>
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111559616-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-  
-      gtag('config', 'UA-111559616-1');
-    </script>
+
+    <!-- Google Analystics -->
 
     <!-- Google AdSense -->
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-8786200479780334",
-              enable_page_level_ads: true
-         });
-    </script>
+ 
 
   </body>
 </html>

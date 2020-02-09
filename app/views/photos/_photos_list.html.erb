@@ -12,7 +12,7 @@
             <div class="panel-body">
               <div class="container">
                 <span class="col-md-12">
-                  <%= link_to venue_photo_path(photo.venue_id, photo), remote: true, method: :delete, 
+                  <%= link_to home_photo_path(photo.home_id, photo), remote: true, method: :delete, 
                     data: {confirm: "Are you sure?"} do %>
                     <i class="fas fa-trash-alt fa-md" aria-hidden="true"></i>
                   <% end %>
