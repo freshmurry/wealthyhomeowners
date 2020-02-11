@@ -40,25 +40,30 @@
     <div class="container">
       <div class="row text-babu">
         <div class="row text-center row-space-1">
+          
           <div class="col-md-3">
-            <i class="fas fa-building fa-2x"></i>
+            <i class="fas fa-home fa-2x"></i>
           </div>
+          
           <div class="col-md-3">
-             <i class="fa fa-map-marker fa-2x"></i>
+            <i class="fa fa-bed fa-2x"></i>
           </div>
-          <div class="col-md-3">
-            <i class="fa fa-users fa-2x"></i>
-          </div>
+          
           <div class="col-md-3">
             <i class="fas fa-toilet fa-2x"></i>
           </div>
+          
+          <!--<div class="col-md-3">-->
+          <!--   <i class="fa fa-map-marker fa-2x"></i>-->
+          <!--</div>-->
+          
         </div>
     
         <div class="row text-center">
-          <div class="col-md-3"><%= @home.event_type %></div>
+          <!--<div class="col-md-3">< @home.event_type %></div>-->
           <div class="col-md-3"><%= @home.home_type %></div>
-          <div class="col-md-3"><%= @home.accommodate %></div>
-          <div class="col-md-3"><%= @home.rest_room %></div>
+          <div class="col-md-3"><%= @home.bedrooms %></div>
+          <div class="col-md-3"><%= @home.bathrooms %></div>
         </div>
       </div>
     </div>  

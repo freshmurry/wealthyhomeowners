@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.5.1'
+# ruby '2.5.1'
+ruby '2.6.3'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -16,6 +17,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'delayed_job'
+
+gem "mini_magick"
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -39,7 +42,7 @@ gem 'toastr-rails', '~> 1.0'
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-facebook', '~> 4.0'
 
-gem 'paperclip', '~> 5.1.0'
+gem "paperclip", "~> 5.1.0"
 gem 'aws-sdk', '~> 2.8'
 
 gem 'geocoder', '~> 1.5'

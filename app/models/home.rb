@@ -12,9 +12,8 @@ class Home < ApplicationRecord
   after_validation :geocode, if: :address_changed?
   
   validates :home_type, presence: true
-  validates :event_type, presence: true
-  validates :accommodate, presence: true
-  validates :rest_room, presence: true
+  validates :bedrooms, presence: true
+  validates :bathrooms, presence: true
 
   def cover_photo(size)
     if self.photos.length > 0

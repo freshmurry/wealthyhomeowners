@@ -5,7 +5,7 @@ class AddAttachmentImageToUser < ActiveRecord::Migration[5.0]
     end
   end
 
-  def self.down
-    remove_attachment :users, :image
-  end
+  # def self.down
+  #   remove_attachment :users, :image
+  # end
 end

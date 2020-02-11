@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.date     "day"
     t.integer  "price"
     t.integer  "status"
-    t.integer  "venue_id"
+    t.integer  "home_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["venue_id"], name: "index_calendars_on_venue_id"
+    t.index ["home_id"], name: "index_calendars_on_home_id"
   end
 
   create_table "conversations", force: :cascade do |t|
@@ -27,6 +27,41 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.integer  "recipient_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "homes", force: :cascade do |t|
+    t.string   "home_type"
+    t.integer  "bedrooms"
+    t.integer  "bathrooms"
+    t.string   "listing_name"
+    t.text     "summary"
+    t.string   "address"
+    t.boolean  "is_kitchen"
+    t.boolean  "is_tables"
+    t.boolean  "is_chairs"
+    t.boolean  "is_microphone"
+    t.boolean  "is_projector"
+    t.boolean  "is_bar"
+    t.boolean  "is_self_parking"
+    t.boolean  "is_valet_parking"
+    t.boolean  "is_garage_parking"
+    t.boolean  "is_air"
+    t.boolean  "is_heating"
+    t.boolean  "is_wifi"
+    t.boolean  "is_custodial"
+    t.boolean  "is_accessible"
+    t.boolean  "is_tablecloths"
+    t.boolean  "is_wheelchair"
+    t.boolean  "is_garbage_removal"
+    t.boolean  "is_stage"
+    t.integer  "price"
+    t.boolean  "active"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.index ["user_id"], name: "index_homes_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -48,18 +83,19 @@ ActiveRecord::Schema.define(version: 20180109174910) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.integer  "venue_id"
+    t.integer  "home_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.index ["venue_id"], name: "index_photos_on_venue_id"
+    t.datetime "image_updated_at"
+    t.index ["home_id"], name: "index_photos_on_home_id"
   end
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "venue_id"
+    t.integer  "home_id"
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer  "price"
@@ -67,14 +103,14 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "status",     default: 0
+    t.index ["home_id"], name: "index_reservations_on_home_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
-    t.index ["venue_id"], name: "index_reservations_on_venue_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.text     "comment"
     t.integer  "star",           default: 1
-    t.integer  "venue_id"
+    t.integer  "home_id"
     t.integer  "reservation_id"
     t.integer  "guest_id"
     t.integer  "host_id"
@@ -82,9 +118,9 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["guest_id"], name: "index_reviews_on_guest_id"
+    t.index ["home_id"], name: "index_reviews_on_home_id"
     t.index ["host_id"], name: "index_reviews_on_host_id"
     t.index ["reservation_id"], name: "index_reviews_on_reservation_id"
-    t.index ["venue_id"], name: "index_reviews_on_venue_id"
   end
 
   create_table "settings", force: :cascade do |t|
@@ -132,43 +168,6 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "venues", force: :cascade do |t|
-    t.string   "venue_type"
-    t.string   "event_type"
-    t.integer  "accommodate"
-    t.integer  "rest_room"
-    t.string   "listing_name"
-    t.text     "summary"
-    t.string   "address"
-    t.boolean  "is_kitchen"
-    t.boolean  "is_tables"
-    t.boolean  "is_chairs"
-    t.boolean  "is_microphone"
-    t.boolean  "is_projector"
-    t.boolean  "is_bar"
-    t.boolean  "is_self_parking"
-    t.boolean  "is_valet_parking"
-    t.boolean  "is_garage_parking"
-    t.boolean  "is_air"
-    t.boolean  "is_heating"
-    t.boolean  "is_wifi"
-    t.boolean  "is_custodial"
-    t.boolean  "is_accessible"
-    t.boolean  "is_tablecloths"
-    t.boolean  "is_wheelchair"
-    t.boolean  "is_garbage_removal"
-    t.boolean  "is_stage"
-    t.integer  "price"
-    t.boolean  "active"
-    t.integer  "user_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.float    "latitude"
-    t.float    "longitude"
-    t.integer  "instant",            default: 1
-    t.index ["user_id"], name: "index_venues_on_user_id"
   end
 
 end

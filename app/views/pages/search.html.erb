@@ -32,53 +32,53 @@
             </div>
             <hr/>
   
-            <div class="row">
-              <div class="col-md-6">
-                <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>
-              </div>
-              <div class="col-md-6">
-                <%= text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "End Date", class: "form-control datepicker" %>
-              </div>
-            </div>
-            <hr/>
+            <!--<div class="row">-->
+            <!--  <div class="col-md-6">-->
+            <!--    < text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>-->
+            <!--  </div>-->
+            <!--  <div class="col-md-6">-->
+            <!--    < text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "End Date", class: "form-control datepicker" %>-->
+            <!--  </div>-->
+            <!--</div>-->
+            <!--<hr/>-->
   
-            <div class="row">
-              <div class="panel panel-default">
-                <div class="panel-heading">Event Type</div>
-                  <div class="panel-body">
-                    <div class="container">
-                      <div class="col-md-4">
-                        <%= check_box_tag "q[event_type_eq_any][]", "Business Meeting" %> Business Meeting
-                      </div>
-                      <div class="col-md-4">
-                        <%= check_box_tag "q[event_type_eq_any][]", "Baby Shower" %> Baby Shower
-                      </div>
-                      <div class="col-md-4">
-                        <%= check_box_tag "q[event_type_eq_any][]", "Bridal Shower" %> Bridal Shower
-                      </div>
-                      <div class="col-md-4">
-                        <%= check_box_tag "q[event_type_eq_any][]", "Bridal Party Dinner" %> Bridal Party Dinner
-                      </div>
-                      <div class="col-md-4">
-                        <%= check_box_tag "q[event_type_eq_any][]", "Repast" %> Repast
-                      </div>
-                      <div class="col-md-4">
-                        <%= check_box_tag "q[event_type_eq_any][]", "Birthday Party" %> Birthday Party
-                      </div>
-                      <div class="col-md-4">
-                        <%= check_box_tag "q[event_type_eq_any][]", "Rehearsal" %> Rehersal
-                      </div>
-                      <div class="col-md-4">
-                        <%= check_box_tag "q[event_type_eq_any][]", "Filming/Photography" %> Filming/Photography
-                      </div>
-                      <div class="col-md-4">
-                        <%= check_box_tag "q[event_type_eq_any][]", "Other" %> Other
-                      </div>
-                    </div>  
-                  </div>
-                </div>
-              </div>
-            <hr/>
+            <!--<div class="row">-->
+            <!--  <div class="panel panel-default">-->
+            <!--    <div class="panel-heading">Event Type</div>-->
+            <!--      <div class="panel-body">-->
+            <!--        <div class="container">-->
+            <!--          <div class="col-md-4">-->
+            <!--            < check_box_tag "q[event_type_eq_any][]", "Business Meeting" %> Business Meeting-->
+            <!--          </div>-->
+            <!--          <div class="col-md-4">-->
+            <!--            < check_box_tag "q[event_type_eq_any][]", "Baby Shower" %> Baby Shower-->
+            <!--          </div>-->
+            <!--          <div class="col-md-4">-->
+            <!--            < check_box_tag "q[event_type_eq_any][]", "Bridal Shower" %> Bridal Shower-->
+            <!--          </div>-->
+            <!--          <div class="col-md-4">-->
+            <!--            < check_box_tag "q[event_type_eq_any][]", "Bridal Party Dinner" %> Bridal Party Dinner-->
+            <!--          </div>-->
+            <!--          <div class="col-md-4">-->
+            <!--            < check_box_tag "q[event_type_eq_any][]", "Repast" %> Repast-->
+            <!--          </div>-->
+            <!--          <div class="col-md-4">-->
+            <!--            < check_box_tag "q[event_type_eq_any][]", "Birthday Party" %> Birthday Party-->
+            <!--          </div>-->
+            <!--          <div class="col-md-4">-->
+            <!--            < check_box_tag "q[event_type_eq_any][]", "Rehearsal" %> Rehersal-->
+            <!--          </div>-->
+            <!--          <div class="col-md-4">-->
+            <!--            < check_box_tag "q[event_type_eq_any][]", "Filming/Photography" %> Filming/Photography-->
+            <!--          </div>-->
+            <!--          <div class="col-md-4">-->
+            <!--            < check_box_tag "q[event_type_eq_any][]", "Other" %> Other-->
+            <!--          </div>-->
+            <!--        </div>  -->
+            <!--      </div>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--<hr/>-->
                 
           <div class="row">
             <!--<div class="col-md-4">-->
@@ -98,59 +98,59 @@
               <div class="col-md-4">
                 <div class="form-group select">
                   <label>Rest Rooms</label>
-                  <%= f.select :rest_room_gteq, [["1", "1"], ["2", "2"], ["3", "3"], ["4+", "4"]], id: "rest_room", prompt: "Select...", class: "form-control" %>
+                  <%= f.select :bathrooms_gteq, [["1", "1"], ["2", "2"], ["3", "3"], ["4+", "4"]], id: "bathrooms", prompt: "Select...", class: "form-control" %>
                 </div>
               </div>
               
             </div>
             <hr/>
   
-            <!--<div class="row">-->
-            <!--  <div class="panel panel-default">-->
-            <!--  <div class="panel-heading">Amenities</div>-->
-            <!--    <div class="panel-body">-->
-            <!--      <div class="container">-->
+            <div class="row">
+              <div class="panel panel-default">
+              <div class="panel-heading">Features</div>
+                <div class="panel-body">
+                  <div class="container">
                     
-            <!--        <div class="col-md-4">-->
-            <!--        </div>-->
+                    <div class="col-md-4">
+                    </div>
                     
-            <!--        <div class="col-md-4">-->
-            <!--        </div>-->
+                    <div class="col-md-4">
+                    </div>
                     
-            <!--        <div class="col-md-4">-->
-            <!--        </div>-->
+                    <div class="col-md-4">
+                    </div>
                     
-            <!--        <div class="col-md-4">-->
-            <!--        </div>-->
+                    <div class="col-md-4">
+                    </div>
                     
-            <!--        <div class="col-md-4">-->
-            <!--        </div>-->
+                    <div class="col-md-4">
+                    </div>
                     
-            <!--        <div class="col-md-4">-->
-            <!--        </div>-->
+                    <div class="col-md-4">
+                    </div>
                     
-            <!--        <div class="col-md-4">-->
-            <!--        </div>-->
+                    <div class="col-md-4">
+                    </div>
                     
-            <!--        <div class="col-md-4">-->
-            <!--        </div>-->
+                    <div class="col-md-4">
+                    </div>
                     
-            <!--        <div class="col-md-4">-->
-            <!--        </div>-->
+                    <div class="col-md-4">
+                    </div>
                     
-            <!--        <div class="col-md-4">-->
-            <!--        </div>-->
+                    <div class="col-md-4">
+                    </div>
                     
-            <!--        <div class="col-md-4">-->
-            <!--        </div>-->
+                    <div class="col-md-4">
+                    </div>
                     
-            <!--        <div class="col-md-4">-->
-            <!--        </div>-->
+                    <div class="col-md-4">
+                    </div>
                     
-            <!--      </div>  -->
-            <!--    </div>-->
-            <!--  </div>-->
-            <!--</div>-->
+                  </div>  
+                </div>
+              </div>
+            </div>
   
             <hr/>
   
@@ -163,7 +163,7 @@
         <br/>
   
         <div class="row" id="home_listing">
-          <%= render partial: "homes/homes_list", locals: {homes: @arrhomes} %>
+          <%= render partial: "homes/homes_list", locals: {homes: @arrHomes} %>
         </div>
       </div>
     </div>
@@ -206,7 +206,7 @@
       }
 
       google.maps.event.addDomListener(window, 'load', function() {
-        initialize(<%= raw @arrhomes.to_json %>)
+        initialize(<%= raw @arrHomes.to_json %>)
       });
     </script>
   </div>
@@ -246,14 +246,14 @@
 
 <script>
   $(function() {
-    $("#q_price_gteq").val('50');
-    $("#q_price_lteq").val('5000');
+    $("#q_price_gteq").val('1000000');
+    $("#q_price_lteq").val('5000000');
 
     $("#slider-range").slider({
       range: true,
-      min: 0,
-      max: 5000,
-      values: [50, 5000],
+      min: 1000000,
+      max: 5000000,
+      values: [1000000, 5000000],
       slide: function(event, ui) {
         $("#q_price_gteq").val(ui.values[0]);
         $("#q_price_lteq").val(ui.values[1]);

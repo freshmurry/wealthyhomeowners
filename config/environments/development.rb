@@ -66,18 +66,18 @@ Rails.application.configure do
   config.web_console.whitelisted_ips << "10.240.0.0/16"
   
   #Required for Heroku
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'http://1c801745d69146d6aefddc7450580cd3.vfs.cloud9.us-east-1.amazonaws.com' }
   
   #Mailgun Integration
   
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'smtp.mailgun.org',
-    port: 2525,
-    domain: 'sandbox849ca54dc98b42888da6976e40db3c35.mailgun.org',
+    port: 587 ,
+    domain: 'sandboxe2ffc76f2f4f40058be11a01d78ca90f.mailgun.org',
     authentication: 'plain',
-    user_name: 'postmaster@sandbox849ca54dc98b42888da6976e40db3c35.mailgun.org',
-    password: '20e436f9190a67c9fbb9b852ab52cae8'
+    user_name: 'postmaster@sandboxe2ffc76f2f4f40058be11a01d78ca90f.mailgun.org',
+    password: 'c38b467561efe05af2d7ee8a7213157b-52b6835e-a24c8b21'
   }
   
   # Gmail Integration

@@ -2,21 +2,24 @@
   <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading preview">
-        <div class="price-box-wrapper">
-          <span>$<%= home.price %> /day</span>
-        </div>
+        
         <%= link_to image_tag(home.cover_photo(:medium)) %>
-        <div class="box-wrapper">
-          <span><%= home.home_type %> &nbsp; <div class="fa fa-users"></div> <%= home.accommodate %></span>
-        </div>
+  
       </div>
-      <div class="panel-body">
+      
+      <div class="panel-body" style="line-height: 1.375;">
         <div class="container">
-          <span class="col-md-12" style="font-weight: 500;"><%= link_to home.listing_name, home %></span></br>
-          <span class="col-md-12"><%= pluralize(home.guest_reviews.count, "review") %></span>
-          <div id="star_<%= home.id %>"></div>
+          <div><span class="col-md-12"><b>$<%= home.price %></b><div style="float: right;" id="star_<%= home.id %>"></div></span></div>
+          <div><span class="col-md-12">
+            <span class="fa fa-bed" style="padding-right: 5px;"></span>Beds <%= home.bedrooms %>
+            <span class="fa fa-toilet" style="padding-left: 5px;"></span> Baths <%= home.bathrooms %> 
+            <span class="fa fa-user" style="padding-left: 5px;"></span> <%= pluralize(home.guest_reviews.count, "Review") %>
+            </span>
+          </div>&nbsp;
+          <div><span class="col-md-12" style="font-size: 1.175rem;"><%= home.address %></span></div>
         </div>
       </div>
+      
     </div>
   </div>
   
