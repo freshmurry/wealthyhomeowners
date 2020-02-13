@@ -14,7 +14,7 @@ Rails.application.routes.draw do
    end
 
    resources :homes, except: [:edit, :destroy] do		
-     member do		
+    member do		
        get 'listing'
        get 'pricing'
        get 'description'
@@ -24,10 +24,10 @@ Rails.application.routes.draw do
        get 'preload'
        get 'preview'
        # get "about" => "pages#about" #creates about_path
-     end
+    end
      resources :photos, only: [:create, :destroy]
      resources :reservations, only: [:create]
-     resources :calendars
+   #  resources :calendars
    end
   
    resources :guest_reviews, only: [:create, :destroy]
@@ -54,10 +54,10 @@ Rails.application.routes.draw do
      resources :messages, only: [:index, :create, :destroy]
    end
 
-   get '/host_calendar' => "calendars#host"
-   get '/payment' => "users#payment"
-   get '/payout' => "users#payout"
-   post '/add_card' => "users#add_card"
+   # get '/host_calendar' => "calendars#host"
+   # get '/payment' => "users#payment"
+   # get '/payout' => "users#payout"
+   # post '/add_card' => "users#add_card"
 
    get '/notification_settings' => 'settings#edit'
    post '/notification_settings' => 'settings#update'

@@ -49,7 +49,7 @@ class HomesController < ApplicationController
 
   def location
   end
-
+  
   def update
     new_params = home_params
     new_params = home_params.merge(active: true) if is_ready_home
@@ -62,20 +62,35 @@ class HomesController < ApplicationController
     redirect_back(fallback_location: request.referer)
   end
   
-  #---- RESERVATIONS ----
-  # def preload
-  #   today = Date.today
-  #   reservations = @home.reservations.where("(start_date >= ? OR end_date >= ?) AND status = ?", today, today, 1)
-  #   unavailable_dates = @home.calendars.where("status = ? AND day > ?", 1, today)
+  def destroy
+    # @home = Home.find(params[:id])
+    # @home.destroy
+  end
+  
+  # def destroy
+    # @listing = Listing.find(params[:id])
+    # @home = @lisiting.home
 
-  #   special_dates = @home.calendars.where("status = ? AND day > ? AND price <> ?", 0, today, @home.price)
+    # @listing.destroy
+    # @listings = Listing.where(home_id: @home.id)
     
-  #   render json: {
-  #       reservations: reservations,
-  #       unavailable_dates: unavailable_dates,
-  #       special_dates: special_dates
-  #   }
+    # respond_to :js
   # end
+  
+  #---- RESERVATIONS ----
+  def preload
+    today = Date.today
+    reservations = @home.reservations.where("(start_date >= ? OR end_date >= ?) AND status = ?", today, today, 1)
+    unavailable_dates = @home.calendars.where("status = ? AND day > ?", 1, today)
+
+    special_dates = @home.calendars.where("status = ? AND day > ? AND price <> ?", 0, today, @home.price)
+    
+    render json: {
+      reservations: reservations,
+      unavailable_dates: unavailable_dates,
+      special_dates: special_dates
+    }
+  end
 
   # def preview
   #   start_date = Date.parse(params[:start_date])

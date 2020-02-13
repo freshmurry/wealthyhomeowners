@@ -1,0 +1,4 @@
+$('#homes').html("<%= j render 'homes_list' %>")
+<% if @home.listings.blank? %>
+  $('#home_check').hide();
+<% end %>

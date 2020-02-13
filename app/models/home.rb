@@ -6,7 +6,7 @@ class Home < ApplicationRecord
   has_many :reservations
   
   has_many :guest_reviews
-  has_many :calendars
+  # has_many :calendars
    
   geocoded_by :address
   after_validation :geocode, if: :address_changed?

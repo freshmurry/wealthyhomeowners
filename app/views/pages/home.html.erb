@@ -1,21 +1,17 @@
 <div class="row">
-  <div class="col-md-8 banner">
-    <h1><span class="text-blue">Search for Information on a Wealthy Homeowner
-    </br></span>simple and easy.</h1>
+  <div class="col-md-12 banner">
+    <h1>Discover the occupations of homeowners who own <span class="text-blue">$1 Million + properties</span.</h1>
   </div>
-
-  <div class="col-md-12"><h4>Homes of the "Well-To-Do" Near You</h4></div>
 </div>
 
-
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-6">
       <%= form_tag search_path, method: :get do %>
 
-      <%= text_field_tag :search, params[:search], placeholder: "Search for a Home", class: "form-control", id: "autolocation" %>
-    </div>&nbsp;
+      <%= text_field_tag :search, params[:search], placeholder: "Search Wealthy Homeowners Near You", class: "form-control", id: "autolocation" %>
+    </div>
 
-    <div class="col-md-2">
+    <div class="col-md-6">
       <%= submit_tag "Search", class: "btn btn-form btn-block" %>
     </div>
   </div>

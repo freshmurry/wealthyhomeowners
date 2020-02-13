@@ -10,70 +10,37 @@
   
   <!-- LEFT PANEL -->
   <div class="col-md-8">
+    <h2><%= @home.address %></h2>
+    
     <!-- Listing Name -->
     <div class="container">
-      <div class="row">
-        <div class="col-md-9">
-        <h2><%= @home.listing_name %></h2>
-            <%= @home.address %>
-        </div>&nbsp;
-
-        <div class="col-md-3 text-center">
-          <%= image_tag avatar_url(@home.user), class: "img-circle avatar-large" %><br/>
-          <%= link_to user_path(@home.user) do %>
-          <%= @home.user.fullname %>
-          <% end %>
-          <div>
-            <span id="average_rating"></span>
-          </div>
-          <div class="center">
-            <% if current_user && current_user != @user %>
-              <%= link_to "Message Host", conversations_path(sender_id: current_user.id, recipient_id: @home.user.id), method: :post, class: "btn btn-default" %>
-            <% end %>
-          </div>
+      <div class="row text-center row-space-1">
+        <div class="col-md-3">
+          <i class="fas fa-home"></i>
+          <%= @home.home_type %>
+        </div>
+          
+        <div class="col-md-3">
+          <i class="fa fa-bed"></i>
+          <%= @home.bedrooms %> Bedrooms
+        </div>
+          
+        <div class="col-md-3">
+          <i class="fas fa-toilet"></i>
+          <%= @home.bathrooms %> Bathrooms
         </div>
       </div>
-    </div>  
-    <hr/>
-      
-    <!-- Home Info -->
-    <div class="container">
-      <div class="row text-babu">
-        <div class="row text-center row-space-1">
-          
-          <div class="col-md-3">
-            <i class="fas fa-home fa-2x"></i>
-          </div>
-          
-          <div class="col-md-3">
-            <i class="fa fa-bed fa-2x"></i>
-          </div>
-          
-          <div class="col-md-3">
-            <i class="fas fa-toilet fa-2x"></i>
-          </div>
-          
-          <!--<div class="col-md-3">-->
-          <!--   <i class="fa fa-map-marker fa-2x"></i>-->
-          <!--</div>-->
-          
-        </div>
+    </div>
     
-        <div class="row text-center">
-          <!--<div class="col-md-3">< @home.event_type %></div>-->
-          <div class="col-md-3"><%= @home.home_type %></div>
-          <div class="col-md-3"><%= @home.bedrooms %></div>
-          <div class="col-md-3"><%= @home.bathrooms %></div>
-        </div>
-      </div>
-    </div>  
+    
+      
     <hr/>
   
     <!-- About -->
     <div class="container">
       <div class="row">
         <div class="panel panel-default">
-          <div class="panel-heading">About This Home</div>
+          <div class="panel-heading">Description</div>
           <div class="panel-body">
             <div class="container">
               <p><%= @home.summary %></p>
