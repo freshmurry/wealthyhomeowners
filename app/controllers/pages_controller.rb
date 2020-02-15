@@ -28,7 +28,7 @@ class PagesController < ApplicationController
     #   start_date = Date.parse(params[:start_date])
     #   end_date = Date.parse(params[:end_date])
 
-    #   @homes.each do |home|
+      @homes.each do |home|
 
     #     not_available = home.reservations.where(
     #       "((? <= start_date AND start_date <= ?)
@@ -50,7 +50,7 @@ class PagesController < ApplicationController
     #       @arrHomes.delete(home)
     #     end
       # end
-    # end
+    end
 
   end
 end
