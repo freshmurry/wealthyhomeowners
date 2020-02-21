@@ -97,35 +97,19 @@
               
               <div class="col-md-4">
                 <div class="form-group select">
-                  <label>Rest Rooms</label>
-                  <%= f.select :bathrooms_gteq, [["1", "1"], ["2", "2"], ["3", "3"], ["4+", "4"]], id: "bathrooms", prompt: "Select...", class: "form-control" %>
+                  <label>Bedrooms</label>
+                   <%= f.select :bedrooms_gteq, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8+", 8]],
+                   id: "bedrooms", prompt: "Select...", class: "form-control" %>
                 </div>
               </div>
               
-            </div>
-            <hr/>
-  
-            <div class="row">
-              <div class="panel panel-default">
-              <div class="panel-heading">Features</div>
-                <div class="panel-body">
-                  <div class="container">
-                    
-                    <div class="col-md-4">
-                      <%= f.check_box :is_pool %> Pool
-                    </div>
-                    
-                    <div class="col-md-4">
-                      <%= f.check_box :is_sauna %> Sauna
-                    </div>
-                    
-                    <div class="col-md-4">
-                      <%= f.check_box :is_hot_tub %> Hot Tub
-                    </div>
-                    
-                  </div>  
+              <div class="col-md-4">
+                <div class="form-group select">
+                  <label>Rest Rooms</label>
+                  <%= f.select :bathrooms_gteq, [["1", 1], ["1.5", 1.5], ["2", 2], ["2.5", 2.5], ["3", 3], ["3.5", 3.5], ["4", 4], ["4.5", 4.5], ["5+", 5]], id: "bathrooms", prompt: "Select...", class: "form-control" %>
                 </div>
               </div>
+              
             </div>
   
             <hr/>

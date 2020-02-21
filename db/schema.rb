@@ -36,16 +36,11 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.string   "listing_name"
     t.text     "summary"
     t.string   "address"
-    t.boolean  "is_pool"
-    t.boolean  "is_sauna"
-    t.boolean  "is_hot_tub"
     t.integer  "price"
     t.boolean  "active"
     t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.float    "latitude"
-    t.float    "longitude"
     t.index ["user_id"], name: "index_homes_on_user_id"
   end
 

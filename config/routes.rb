@@ -19,7 +19,6 @@ Rails.application.routes.draw do
        get 'pricing'
        get 'description'
        get 'photo_upload'
-       get 'features'
        get 'location'
        get 'preload'
        get 'preview'

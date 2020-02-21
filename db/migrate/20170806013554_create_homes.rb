@@ -7,9 +7,6 @@ class CreateHomes < ActiveRecord::Migration[5.0]
       t.string :listing_name
       t.text :summary
       t.string :address
-      t.boolean :is_pool
-      t.boolean :is_sauna
-      t.boolean :is_hot_tub
       t.integer :price
       t.boolean :active
       t.references :user, index: true, foreign_key: true

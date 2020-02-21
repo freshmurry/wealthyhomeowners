@@ -26,11 +26,6 @@
   </li>
   
   <li class="sidebar-item">
-    <%= link_to "Features", features_home_path, class: "sidebar-link active" %>
-    <span class="pull-right text-babu"><i class="fa fa-check-circle"></i></span>
-  </li>
-  
-  <li class="sidebar-item">
     <%= link_to "Location", location_home_path, class: "sidebar-link active" %>
     <% if !@home.address.blank? %>
       <span class="pull-right text-babu"><i class="fa fa-check-circle"></i></span>

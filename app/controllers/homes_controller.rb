@@ -44,9 +44,6 @@ class HomesController < ApplicationController
     @photos = @home.photos
   end
 
-  def features
-  end
-
   def location
   end
   
@@ -124,7 +121,6 @@ class HomesController < ApplicationController
     end
 
     def home_params
-      params.require(:home).permit(:home_type, :bathrooms, :bedrooms, :listing_name, :summary, :address, :is_pool,
-      :is_sauna, :is_hot_tub, :price, :active, :instant)
+      params.require(:home).permit(:home_type, :bathrooms, :bedrooms, :listing_name, :summary, :address, :price, :active, :instant)
     end
 end
