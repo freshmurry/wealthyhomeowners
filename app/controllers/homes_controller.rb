@@ -124,8 +124,7 @@ class HomesController < ApplicationController
     end
 
     def home_params
-      params.require(:home).permit(:home_type, :bathrooms, :bedrooms, :listing_name, :summary, :address, :is_kitchen, 
-      :is_tables, :is_chairs, :is_microphone, :is_projector, :is_bar, :is_self_parking, :is_valet_parking, :is_garage_parking, 
-      :is_air, :is_heating, :is_wifi, :is_custodial, :is_accessible, :is_tablecloths, :is_wheelchair, :is_stage, :price, :active, :instant)
+      params.require(:home).permit(:home_type, :bathrooms, :bedrooms, :listing_name, :summary, :address, :is_pool,
+      :is_sauna, :is_hot_tub, :price, :active, :instant)
     end
 end
