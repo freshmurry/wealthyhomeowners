@@ -14,6 +14,9 @@ class Home < ApplicationRecord
   validates :home_type, presence: true
   validates :bedrooms, presence: true
   validates :bathrooms, presence: true
+  validates :listing_name, presence: true, length: {maximum: 50}
+  validates :summary, presence: true, length: {maximum: 500}
+  validates :address, presence: true
 
   def cover_photo(size)
     if self.photos.length > 0

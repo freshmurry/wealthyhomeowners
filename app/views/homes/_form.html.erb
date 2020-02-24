@@ -1,0 +1,86 @@
+<div class="panel panel-default" style="margin-right: -45px; margin-left: -45px;">
+  <div class="panel-heading">
+    Create Home
+  </div>
+  <div class="panel-body">
+    <div class="container">
+
+      <%= form_for @home, url: home_photos_path(@home), method: 'post', html: {multipart: true} do |f| %>
+          
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Address</label>
+            <%= f.text_field :address, placeholder: "What is the address?", class: "form-control" %>
+          </div>
+        </div>
+        
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Home Type</label>
+              <%= f.select :home_type, [["Single Family", "Single Family"],["Loft", "Loft"], ["Condo", "Condo"]],
+                id: "home_type", prompt: "Select...", class: "form-control" %>
+            </div>
+          </div>
+          
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Bedrooms</label>
+              <%= f.select :bedrooms, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], 
+                 ["9", 9], ["10", 10]], 
+                 id: "bedrooms", prompt: "Select...", class: "form-control" %>
+            </div>
+          </div>
+          
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Bathrooms</label>
+              <%= f.select :bathrooms, [["1", 1], ["1.5", 1.5], ["2", 2], ["2.5", 2.5], ["3", 3], ["3.5", 3.5], ["4", 4], ["4.5", 4.5], ["5", 5], ["6", 6], ["7", 7], ["8", 8]], 
+              id: "bathrooms", prompt: "Select...", class: "form-control" %>
+            </div>
+          </div>
+          
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Owners Occupation</label>
+            <%= f.text_field :listing_name, placeholder: "Be clear and descriptive", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Summary</label>
+            <%= f.text_area :summary, rows: 5, placeholder: "Tell about this home", class: "form-control" %>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Purchase Price</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+                <%= f.text_field :price, placeholder: "eg. $100", class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Upload Photos</label>
+            <span class="btn btn-default btn-file">
+              <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i> Select Photos
+              <%= file_field_tag "images[]", type: :file, multiple: true %>
+            </span>
+          </div>
+        </div>
+        
+        <div id="photos"><%= render 'photos/photos_list' %></div>
+        
+        <div class="col-md-12"> 
+          <%= f.hidden_field :active, value: true %>
+          <%= f.submit "Publish", id: "publish_button", class: "btn btn-normal" %>
+        </div>    
+      <% end %>
+
+    </div>
+  </div>
+</div>

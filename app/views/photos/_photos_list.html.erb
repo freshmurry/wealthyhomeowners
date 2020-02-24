@@ -1,27 +1,22 @@
-<% if @photos.count > 0 %>
-  <br/><br/>
+<% if @photos %>
 
-  <div class="row">
-    <div class="container-fluid">
-      <% @photos.each do |photo| %>
-        <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading preview">
-              <%= image_tag photo.image.url(nil) %>
-            </div>
-            <div class="panel-body">
-              <div class="container">
-                <span class="col-md-12">
-                  <%= link_to home_photo_path(photo.home_id, photo), remote: true, method: :delete, 
-                    data: {confirm: "Are you sure?"} do %>
-                    <i class="fas fa-trash-alt fa-md" aria-hidden="true"></i>
-                  <% end %>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+	<div class="row">
+		<% @photos.each do |photo| %>		
+			<div class="col-md-4">
+				<div class="panel panel-default">
+				  <div class="panel-heading preview">
+				  	<%= image_tag photo.image.url() %>
+				  </div>
+				  <div class="panel-body">
+				  	<span class="pull-right">
+				  	<%= link_to photo, remote: true, method: :delete, data: {confirm: "Are you sure?"} do %>
+				  		<i class="fa fa-times fa-lg"></i>
+				  		<% end %>
+				  	</span>
+				  </div>
+				</div>
+			</div>
+		<% end %>			
+	</div>
+
 <% end %>
