@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
  
   root "pages#home"
-   
+  get "about" => "pages#about" #creates about_path
+
   devise_for :users,
             path: '',
             path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
@@ -16,9 +17,10 @@ Rails.application.routes.draw do
 
   resources :homes, except: [ :destroy] do
   member do
-     get 'preload'
-     get 'preview'
-     # get "about" => "pages#about" #creates about_path
+    get 'photo_upload'
+    get 'preload'
+    get 'preview'
+    get "about" => "pages#about" #creates about_path
   end
    resources :photos, only: [:create, :destroy]
    resources :reservations, only: [:create]

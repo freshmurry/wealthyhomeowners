@@ -33,16 +33,17 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.string   "home_type"
     t.integer  "bedrooms"
     t.integer  "bathrooms"
-    t.string   "listing_name"
+    t.string   "occupation"
     t.text     "summary"
     t.string   "address"
-    t.integer  "price"
+    t.string   "price"
     t.boolean  "active"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "instant",    default: 1
     t.index ["user_id"], name: "index_homes_on_user_id"
   end
 
@@ -66,12 +67,11 @@ ActiveRecord::Schema.define(version: 20180109174910) do
 
   create_table "photos", force: :cascade do |t|
     t.integer  "home_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.index ["home_id"], name: "index_photos_on_home_id"
   end
 
@@ -143,10 +143,6 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.string   "stripe_id"
     t.string   "merchant_id"
     t.integer  "unread",                 default: 0
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

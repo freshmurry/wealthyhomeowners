@@ -14,7 +14,7 @@ class Home < ApplicationRecord
   validates :home_type, presence: true
   validates :bedrooms, presence: true
   validates :bathrooms, presence: true
-  validates :listing_name, presence: true, length: {maximum: 50}
+  validates :occupation, presence: true, length: {maximum: 50}
   validates :summary, presence: true, length: {maximum: 500}
   validates :address, presence: true
 

@@ -7,5 +7,15 @@ class CreatePhotos < ActiveRecord::Migration[5.0]
       t.integer "image_file_size"
       t.timestamps null: false
     end
-  end  
+  end
+  
+  def self.up
+    change_table :photos do |t|
+      t.attachment :image
+    end
+  end
+
+  def self.down
+    remove_attachment :photos, :image
+  end
 end

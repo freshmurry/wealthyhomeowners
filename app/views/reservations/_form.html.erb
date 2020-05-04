@@ -5,8 +5,9 @@
   </div>
   <div class="panel-body">
     <div class="container">
-      <div class="col-md-12 text-center">
-          <b>Owner's Occupation:</b> <%= @home.listing_name %>
+      <div class="col-md-12">
+          <b>Owner's Occupation:</b> 
+          <p><%= @home.occupation %></p>
           <!--< link_to image_tag avatar_url(@home.user), class: "img-circle avatar-large" %><br/>-->
           <!--< link_to user_path(@home.user) do %>-->
           <!--< @home.user.fullname %>-->

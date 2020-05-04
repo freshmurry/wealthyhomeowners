@@ -4,10 +4,10 @@ class CreateHomes < ActiveRecord::Migration[5.0]
       t.string :home_type #Church, Park District, Town Hall, Parking Lot, Back Yard, Vine Yard, Golf Course, Warehouse
       t.integer :bedrooms
       t.integer :bathrooms
-      t.string :listing_name
+      t.string :occupation
       t.text :summary
       t.string :address
-      t.integer :price
+      t.string :price
       t.boolean :active
       t.references :user, index: true, foreign_key: true
 

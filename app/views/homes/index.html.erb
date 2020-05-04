@@ -19,10 +19,10 @@
                     <%= image_tag home.cover_photo(:thumb) %>
                   </div>
                   <div class="col-md-8">
-                    <h5><%= home.listing_name %></h5>
+                    <h5><%= home.address %></h5>
                   </div>
                   <div class="col-md-2">
-                    <%= link_to "Update", edit_home_path(home), class: "btn btn-form" %>
+                    <%= link_to "Update", edit_home_path(home.id), class: "btn btn-form" %>
                     <!--< link_to homes_path(home.id), remote: true, method: :delete, data: {confirm: "Are you sure?"} do %>-->
                     <!--<i class="fas fa-trash-alt fa-lg" aria-hidden="true"></i>-->
                   <!--< end %>-->

@@ -1,8 +1,7 @@
 class HomesController < ApplicationController
   before_action :set_home, except: [:index, :new, :create]
-  # before_action :set_home, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:show, :preload, :preview]
-  # before_action :is_authorized, only: [:listing, :pricing, :description, :photo_upload, :features, :location, :update]
+  before_action :is_authorized, only: [:occupation, :pricing, :description, :photo_upload, :features, :location, :update]
 
   def index
     @homes = current_user.homes
@@ -20,14 +19,11 @@ class HomesController < ApplicationController
       
     @home = current_user.homes.build(home_params)
     if @home.save
-      redirect_to listing_home_path(@home), notice: "Saved..."
+      redirect_to home_path(@home), notice: "Saved..."
     else
       flash[:alert] = "Something went wrong..."
       render :new
     end
-  end
-  
-  def edit
   end
   
   def show
@@ -35,14 +31,14 @@ class HomesController < ApplicationController
     @guest_reviews = @home.guest_reviews
   end
   
-  # def listing
-  # end
+  def occupation
+  end
 
-  # def pricing
-  # end
+  def pricing
+  end
 
-  # def description
-  # end
+  def description
+  end
 
   def photo_upload
     @photos = @home.photos
@@ -53,7 +49,7 @@ class HomesController < ApplicationController
   
   def update
     new_params = home_params
-    # new_params = home_params.merge(active: true) if is_ready_home
+    new_params = home_params.merge(active: true) if is_ready_home
 
     if @home.update(new_params)
       flash[:notice] = "Saved..."
@@ -93,38 +89,38 @@ class HomesController < ApplicationController
     }
   end
 
-  # def preview
-  #   start_date = Date.parse(params[:start_date])
-  #   end_date = Date.parse(params[:end_date])
+  def preview
+    start_date = Date.parse(params[:start_date])
+    end_date = Date.parse(params[:end_date])
 
-  #   output = {
-  #     conflict: is_conflict(start_date, end_date, @home)
-  #   }
+    output = {
+      conflict: is_conflict(start_date, end_date, @home)
+    }
 
-  #   render json: output
-  # end
+    render json: output
+  end
   
-  # private
-  #   def is_conflict(start_date, end_date, home)
-  #     check = home.reservations.where("(? < start_date AND end_date < ?) AND status = ?", start_date, end_date, 1)
-  #     check_2 = home.calendars.where("day BETWEEN ? AND ? AND status = ?", start_date, end_date, 1).limit(1)
+  private
+    def is_conflict(start_date, end_date, home)
+      check = home.reservations.where("(? < start_date AND end_date < ?) AND status = ?", start_date, end_date, 1)
+      check_2 = home.calendars.where("day BETWEEN ? AND ? AND status = ?", start_date, end_date, 1).limit(1)
       
-  #     check.size > 0 || check_2.size > 0 ? true : false 
-  #   end
+      check.size > 0 || check_2.size > 0 ? true : false 
+    end
 
     def set_home
       @home = Home.find(params[:id])
     end
 
-    # def is_authorized
-    #   redirect_to root_path, alert: "You don't have permission" unless current_user.id == @home.user_id
-    # end
+    def is_authorized
+      redirect_to root_path, alert: "You don't have permission" unless current_user.id == @home.user_id
+    end
 
-    # def is_ready_home
-    #   !@home.active && !@home.price.blank? && !@home.listing_name.blank? && !@home.photos.blank? && !@home.address.blank?
-    # end
+    def is_ready_home
+      !@home.active && !@home.price.blank? && !@home.occupation.blank? && !@home.photos.blank? && !@home.address.blank?
+    end
 
     def home_params
-      params.require(:home).permit(:home_type, :bathrooms, :bedrooms, :listing_name, :summary, :address, :price, :active, :instant)
+      params.require(:home).permit(:home_type, :bathrooms, :bedrooms, :occupation, :summary, :address, :price, :active, :instant)
     end
 end
