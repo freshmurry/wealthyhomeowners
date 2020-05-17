@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
 
   def create
-    @home = Home.find(params[:home_id])
+    @home = Home.find(params[:id])
     @photos = @home.photos
 
     if params[:images]

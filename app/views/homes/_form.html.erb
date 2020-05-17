@@ -10,7 +10,6 @@
 				  
           <%= form_for @home, html: { multipart: true } do |f| %>
           <!--<= form_for @home, url: home_photos_path(@home), method: 'post', html: {multipart: true} do |f| %>-->
-    
               
             <div class="col-md-12">
               <div class="form-group">
@@ -67,24 +66,11 @@
                 </div>
               </div>
             </div>
-    
-            <!--<div class="col-md-4">-->
-            <!--  <div class="form-group">-->
-            <!--    <label>Upload Photos</label>-->
-            <!--    <span class="btn btn-default btn-file">-->
-            <!--      <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i> Select Photos-->
-            <!--      <= file_field_tag "images[]", type: :file, multiple: true %>-->
-            <!--    </span>-->
-            <!--  </div>-->
-            <!--</div>-->
             
-            <!--<div id="photos"><%= render 'photos/photos_list' %></div>-->
-            
-          <% end %>
         </div>
 			</div>
     </div>
-    
+<!------------------------------ PHOTO UPLOAD PANEL ------------------------------>
     <div class="panel panel-default">
       <div class="panel-heading">Add Photos</div>
       
@@ -95,20 +81,18 @@
               <div class="col-md-offset-3 col-md-6">
                   
                 <!-- PHOTOS UPLOAD GOES HERE -->
-                <%= form_for @home, url: home_photos_path(@home), method: 'post', html: {multipart: true} do |f| %>
-                  <div class="container">
-                    <div class="row">
-                      <div class="form-group">
-                        <span class="btn btn-default btn-file text-babu">
-                          <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i> Select Photos
-                          <%= file_field_tag "images[]", type: :file, multiple: true %>
-                        </span>
-                      </div>
-                    </div>  
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Upload Photos</label>
+                    <span class="btn btn-default btn-file">
+                      <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i> Select Photos
+                      <%= file_field_tag "images[]", type: :file, multiple: true %>
+                    </span>
                   </div>
-    
+                </div>
+                
                   <div class="text-center">
-                    <%= f.submit "Save", class: "btn btn-form" %>
+                    <%= f.submit "Publish", class: "btn btn-form" %>
                   </div>
     
                 <% end %>
