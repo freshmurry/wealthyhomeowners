@@ -119,6 +119,6 @@ class HomesController < ApplicationController
 
     def home_params
       params.require(:home).permit(:home_type, :bathrooms, :bedrooms, :occupation, :summary, :address, :price, :active, 
-      :instant, :is_indoor_pool, :is_outdoor_pool, :is_basketball_court)
+      :is_indoor_pool, :is_outdoor_pool, :is_basketball_court)
     end
 end
