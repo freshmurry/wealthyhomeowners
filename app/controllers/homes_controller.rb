@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
   before_action :set_home, except: [:index, :new, :create]
-  before_action :authenticate_user!, except: [:show, :preload, :preview]
-  before_action :is_authorized, only: [:occupation, :pricing, :description, :photo_upload, :location, :update]
+  before_action :authenticate_user!, except: [:show, :preview]
+  before_action :is_authorized, only: [:occupation, :pricing, :occupation, :photo_upload, :location, :update]
 
   def index
     @homes = current_user.homes
@@ -19,7 +19,7 @@ class HomesController < ApplicationController
       
     @home = current_user.homes.build(home_params)
     if @home.save
-      redirect_to home_path(@home), notice: "Saved..."
+      redirect_to listing_home_path(@home), notice: "Saved..."
     else
       flash[:alert] = "Something went wrong..."
       render :new
@@ -35,9 +35,6 @@ class HomesController < ApplicationController
   end
 
   def pricing
-  end
-
-  def description
   end
 
   def photo_upload
@@ -59,10 +56,10 @@ class HomesController < ApplicationController
     redirect_back(fallback_location: request.referer)
   end
   
-  def destroy
+  # def destroy
     # @home = Home.find(params[:id])
     # @home.destroy
-  end
+  # end
   
   # def destroy
     # @listing = Listing.find(params[:id])
@@ -75,19 +72,19 @@ class HomesController < ApplicationController
   # end
   
   #---- RESERVATIONS ----
-  def preload
-    today = Date.today
-    reservations = @home.reservations.where("(start_date >= ? OR end_date >= ?) AND status = ?", today, today, 1)
-    unavailable_dates = @home.calendars.where("status = ? AND day > ?", 1, today)
+  # def preload
+  #   today = Date.today
+  #   reservations = @home.reservations.where("(start_date >= ? OR end_date >= ?) AND status = ?", today, today, 1)
+  #   unavailable_dates = @home.calendars.where("status = ? AND day > ?", 1, today)
 
-    special_dates = @home.calendars.where("status = ? AND day > ? AND price <> ?", 0, today, @home.price)
+  #   special_dates = @home.calendars.where("status = ? AND day > ? AND price <> ?", 0, today, @home.price)
     
-    render json: {
-      reservations: reservations,
-      unavailable_dates: unavailable_dates,
-      special_dates: special_dates
-    }
-  end
+  #   render json: {
+  #     reservations: reservations,
+  #     unavailable_dates: unavailable_dates,
+  #     special_dates: special_dates
+  #   }
+  # end
 
   def preview
     start_date = Date.parse(params[:start_date])
@@ -121,6 +118,7 @@ class HomesController < ApplicationController
     end
 
     def home_params
-      params.require(:home).permit(:home_type, :bathrooms, :bedrooms, :occupation, :summary, :address, :price, :active, :instant)
+      params.require(:home).permit(:home_type, :bathrooms, :bedrooms, :occupation, :summary, :address, :price, :active, 
+      :instant, :is_indoor_pool, :is_outdoor_pool, :is_basketball_court)
     end
 end

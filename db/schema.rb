@@ -34,16 +34,19 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.integer  "bedrooms"
     t.integer  "bathrooms"
     t.string   "occupation"
+    t.string   "listing_name"
+    t.string   "is_indoor_pool"
+    t.string   "is_outdoor_pool"
+    t.string   "is_basketball_court"
     t.text     "summary"
     t.string   "address"
     t.string   "price"
     t.boolean  "active"
     t.integer  "user_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "instant",    default: 1
     t.index ["user_id"], name: "index_homes_on_user_id"
   end
 
@@ -67,11 +70,12 @@ ActiveRecord::Schema.define(version: 20180109174910) do
 
   create_table "photos", force: :cascade do |t|
     t.integer  "home_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "image_updated_at"
     t.index ["home_id"], name: "index_photos_on_home_id"
   end
 

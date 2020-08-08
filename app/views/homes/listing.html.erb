@@ -1,23 +1,28 @@
 <div class="row">
+  <div class="col-md-3">
+    <%= render 'home_menu' %>
+  </div>
   <div class="col-md-9">
     <div class="panel panel-default">
+
       <div class="panel-heading">
-        Create a Home
+        Listing
       </div>
+
       <div class="panel-body">
         <div class="container">
-
           <%= form_for @home do |f| %>
 
-            <div class="col-md-4 select">
+            <div class="row">
+              <div class="col-md-4 select">
                 <div class="form-group">
-                  <label>Home Type</label>
+                 <label>Home Type</label>
                   <%= f.select :home_type, [["Single Family", "Single Family"],["Loft", "Loft"], ["Condo", "Condo"]],
                     id: "home_type", prompt: "Select...", class: "form-control" %>
-                </div>
-              </div>
-              
-              <div class="col-md-4 select">
+               	</div>
+            	</div>
+
+            	<div class="col-md-4 select">
                 <div class="form-group">
                   <label>Bedrooms</label>
                   <%= f.select :bedrooms, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], 
@@ -33,23 +38,13 @@
                   id: "bathrooms", prompt: "Select...", class: "form-control" %>
                 </div>
               </div>
-        
-            <div class="col-md-12 text-center">
-              <div><%= f.submit "Save", class: "btn btn-normal" %> 
-            </div>
+
+            <div><%= f.submit "Save", class: "btn btn-normal" %></div>
 
           <% end %>
         </div>
       </div>
-    </div>
-  </div>  
-</div>
 
-<div class="col-md-3">
-  <div class="panel-default">
-    <div class="container">
-      <a href="https://track.fiverr.com/visit/?bta=7074&nci=5479&campaign=19735" Target="_Top"><img border="0" src="https://fiverr.ck-cdn.com/tn/serve/?cid=1492998"></a>
-      <br><br/>
     </div>
-  </div> 
+  </div>
 </div>

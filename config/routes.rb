@@ -15,16 +15,21 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :homes, except: [ :destroy] do
-  member do
-    get 'photo_upload'
-    get 'preload'
-    get 'preview'
-    get "about" => "pages#about" #creates about_path
-  end
-   resources :photos, only: [:create, :destroy]
-   resources :reservations, only: [:create]
-  #  resources :calendars
+  resources :homes do
+    member do
+      get 'listing'
+      get 'pricing'
+      get 'occupation'
+      get 'photo_upload'
+      get 'amenities'
+      get 'location'
+      get 'preload'
+      get 'preview'
+      get "about" => "pages#about" #creates about_path
+    end
+      resources :photos, only: [:create, :destroy]
+      resources :reservations, only: [:create]
+      resources :calendars
   end
   
   resources :guest_reviews, only: [:create, :destroy]

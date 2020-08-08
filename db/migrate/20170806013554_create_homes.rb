@@ -5,6 +5,10 @@ class CreateHomes < ActiveRecord::Migration[5.0]
       t.integer :bedrooms
       t.integer :bathrooms
       t.string :occupation
+      t.string :listing_name
+      t.string :is_indoor_pool
+      t.string :is_outdoor_pool
+      t.string :is_basketball_court
       t.text :summary
       t.string :address
       t.string :price

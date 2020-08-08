@@ -49,7 +49,7 @@ gem 'geocoder', '~> 1.5'
 gem 'jquery-ui-rails', '~> 5.0'
 
 gem 'ransack', '~> 1.7'
-gem 'thin'
+gem 'puma'
 gem 'figaro'
 
 group :production do

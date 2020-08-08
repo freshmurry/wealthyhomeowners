@@ -1,8 +1,7 @@
 class PhotosController < ApplicationController
 
   def create
-    @home = Home.find(params[:id])
-    @photos = @home.photos
+    @home = Home.find(params[:home_id])
 
     if params[:images]
         params[:images].each do |img|

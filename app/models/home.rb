@@ -1,9 +1,9 @@
 class Home < ApplicationRecord
-  enum instant: {Request: 0, Instant: 1}
+  # enum instant: {Request: 0, Instant: 1}
   
   belongs_to :user
   has_many :photos
-  has_many :reservations
+  # has_many :reservations
   
   has_many :guest_reviews
   # has_many :calendars
@@ -14,9 +14,9 @@ class Home < ApplicationRecord
   validates :home_type, presence: true
   validates :bedrooms, presence: true
   validates :bathrooms, presence: true
-  validates :occupation, presence: true, length: {maximum: 50}
-  validates :summary, presence: true, length: {maximum: 500}
-  validates :address, presence: true
+  # validates :occupation, presence: true, length: {maximum: 50}
+  # validates :summary, presence: true, length: {maximum: 500}
+  # validates :address, presence: true
 
   def cover_photo(size)
     if self.photos.length > 0
