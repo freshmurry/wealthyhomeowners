@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
   before_action :set_home, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show, :preview]
-  before_action :is_authorized, only: [:occupation, :pricing, :occupation, :photo_upload, :location, :update]
+  before_action :is_authorized, only: [:listing, :pricing, :occupation, :photo_upload, :amenities, :location, :update]
 
   def index
     @homes = current_user.homes
@@ -118,7 +118,7 @@ class HomesController < ApplicationController
     end
 
     def home_params
-      params.require(:home).permit(:home_type, :bathrooms, :bedrooms, :occupation, :summary, :address, :price, :active, 
+      params.require(:home).permit(:listing_name, :home_type, :bathrooms, :bedrooms, :occupation, :company_name, :company_website, :summary, :address, :price, :active, 
       :is_indoor_pool, :is_outdoor_pool, :is_basketball_court)
     end
 end

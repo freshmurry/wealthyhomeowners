@@ -6,21 +6,32 @@
   <div class="panel-body">
     <div class="container">
       <div class="col-md-12">
-          <b>Owner's Occupation:</b> 
-          <p><%= @home.occupation %></p>
-          <!--< link_to image_tag avatar_url(@home.user), class: "img-circle avatar-large" %><br/>-->
-          <!--< link_to user_path(@home.user) do %>-->
-          <!--< @home.user.fullname %>-->
+        <b>Owner's Name:</b>
+        <p><%= @home.listing_name %></p>
+
+        <b>Owner's Occupation:</b> 
+        <p><%= @home.occupation %></p>
+
+        <b>Company's Name:</b> 
+        <p><%= @home.company_name %></p>
+
+        <b>Company's Website:</b> 
+        <p><%= link_to @home.company_website, :target => "_blank" %></p>
+        
+          <!--<= link_to image_tag avatar_url(@home.user), class: "img-circle avatar-large" %><br/>-->
+          <!--<= link_to user_path(@home.user) do %>-->
+          <!--<= @home.user.fullname %>-->
           <!--< end %>-->
-          <div>
-            <span id="average_rating"></span>
-          </div>
-          <div class="center">
-            <% if current_user && current_user != @user %>
-              <%= link_to "Request Info", conversations_path(sender_id: current_user.id, recipient_id: @home.user.id), method: :post, class: "btn btn-default" %>
-            <% end %>
-          </div>
-        </div>&nbsp;
+          
+        <!--  <div>-->
+        <!--    <span id="average_rating"></span>-->
+        <!--  </div>-->
+        <!--  <div class="center">-->
+        <!--    < if current_user && current_user != @user %>-->
+        <!--      <= link_to "Request Info", conversations_path(sender_id: current_user.id, recipient_id: @home.user.id), method: :post, class: "btn btn-default" %>-->
+        <!--    < end %>-->
+        <!--  </div>-->
+        <!--</div>&nbsp;-->
         
       <!--<= form_for([@home, @home.reservations.new]) do |f| %>-->
         <!--<div class="row">-->

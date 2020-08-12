@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109174910) do
+ActiveRecord::Schema.define(version: 20200812042630) do
 
   create_table "calendars", force: :cascade do |t|
     t.date     "day"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.datetime "updated_at",          null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "company_name"
+    t.string   "company_website"
     t.index ["user_id"], name: "index_homes_on_user_id"
   end
 
