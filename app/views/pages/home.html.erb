@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-md-12 banner">
-    <h1><span class="text-blue">Discover Wealthy Homeowners Near You</span>.</h1>
+  <div class="col-md-12 banner text-center">
+    <h1><span class="text-blue">Discover Wealthy Homeowners Near You</span></h1>
   </div>
 </div>
 
@@ -23,6 +23,41 @@
 <!---- HOMES ---->
 <div class="row">
   <%= render partial: "homes/homes_list", locals: {homes: @homes} %>
+</div>
+
+<!-- HOW WEALTHYHOMEOWNERS WORKS -->
+<div class="page-section">
+  <div class="banner text-center">
+   	<h2 class="text-blue">How WealthyHomeowners Work</h2>
+    <h3>Wealth Transparancy</h3>
+  </div>
+    
+  <div class="row text-center">
+  <div class="col-md-4">
+    <div class="fas fa-search fa-4x text-blue"></div>
+    <h3 class="my-3">Search</h3>
+    <p class="text-center">Search for a wealthy homeowner near you.</p>
+  </div>
+                    
+   <div class="col-md-4">
+   	<div class="fas fa-home fa-4x text-blue"></div>
+    <h3>Learn</h3>
+    <p class="text-center">Learn how much their homes are worth and occupations.</p>
+  </div>
+                    
+  <div class="col-md-4">
+    <div class="fas fa-clipboard fa-4x text-blue"></div>
+   	<h3>Apply</h3>
+   	<p class="text-center">Apply this knowledge to your own professioanl career development and lifestyle aspirations.</p>
+  </div>
+  
+  <div class="row">
+    <div class="banner col-lg-12 text-center">
+      <button class="btn btn-form">
+        <%= link_to "Sign Me Up!", new_user_registration_path, style: "text-decoration: none; color: #FFF; font-weight: 500; font-size: 20px" %>
+      </button>
+    </div>
+  </div>
 </div>
 
 <!-- HOMES -->

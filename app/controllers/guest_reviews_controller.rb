@@ -3,7 +3,7 @@ class GuestReviewsController < ApplicationController
   def create
     # Step 1: Check if the reservation exist
 
-    # Step 2: Check if the current host already reviewed the gues in this reservation.
+    # Step 2: Check if the current host already reviewed the guest in this reservation.
 
     @reservation = Reservation.where(
                     id: guest_review_params[:reservation_id],

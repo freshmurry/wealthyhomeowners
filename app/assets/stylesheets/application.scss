@@ -58,6 +58,21 @@ a {
   color: #34495E;
 }
 
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
 .container {
   width: 80%;
 }
@@ -88,6 +103,7 @@ div.panel-body {
 // NAVBARS
 .navbar-default {
   background-color: #FFFFFF;
+  border-radius: 0px;
 }
 
 .navbar-default .navbar-brand {
@@ -140,9 +156,15 @@ ul.nav.navbar-nav.navbar-right a {
   background-color: #e00007;
 }
 
+// .btn.btn-form {
+//   border: 1px solid #34495E;
+//   background-color: #34495E;
+// }
+
 .btn.btn-form {
-  border: 1px solid #34495E;
-  background-color: #34495E;
+  border: 1px outset #00A699;
+  background-color: #00A699;
+  border-radius: 2px;
 }
 
 // .btn-small {
@@ -322,6 +344,13 @@ button.btn.btn-form.btn-small {
   text-decoration: none;
 }
 
+.website{
+  color: #003569;
+  text-decoration: none;
+  font-size: 0.2Srm;
+  font-weight: 600;
+}
+
 // PHOTO UPLOAD
 .btn-file {
   position: relative;
@@ -426,7 +455,7 @@ div.box-wrapper {
   position: fixed;
   top: 0;
   right: 0;
-  width: 450px;
+  width: 500px;
   height: 100%;
 }
 

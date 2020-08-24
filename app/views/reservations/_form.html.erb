@@ -16,7 +16,7 @@
         <p><%= @home.company_name %></p>
 
         <b>Company's Website:</b> 
-        <p><%= link_to @home.company_website, :target => "_blank" %></p>
+        <p><%= link_to @home.company_website, @home.company_website, class: 'website', :target => "_blank" %></p>
         
           <!--<= link_to image_tag avatar_url(@home.user), class: "img-circle avatar-large" %><br/>-->
           <!--<= link_to user_path(@home.user) do %>-->
