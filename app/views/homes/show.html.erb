@@ -129,21 +129,21 @@
     <!-- NEAR BY HOMES  -->
     <div class="panel panel-default">
       <div class="panel-heading">Nearby Homes</div>
-        <% for home in @home.nearbys(4) %>
-      <div class="col-md-4">
-        <div class="panel panel-default">
-          <div class="panel-heading preview">
-            <%= image_tag home.cover_photo(:medium) %>
-          </div>
-              
-          <div class="panel-body">
-            <div class="container">
-              <%= link_to home.address, home %><br/>
-              (<%= home.distance.round(2) %> miles away)
+      <% for home in @home.nearbys(4) %>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading preview">
+              <%= image_tag home.cover_photo(:medium) %>
             </div>
-          </div>
-        </div>  
-      </div>
+                
+            <div class="panel-body">
+              <div class="container">
+                <%= link_to home.address, home %><br/>
+                (<%= home.distance.round(2) %> miles away)
+              </div>
+            </div>
+          </div>  
+        </div>
       <% end %>  
     </div>  
   </div>
