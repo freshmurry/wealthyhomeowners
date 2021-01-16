@@ -1,7 +1,7 @@
 class CreateHomes < ActiveRecord::Migration[5.0]
   def change
     create_table :homes do |t|
-      t.string :home_type #Church, Park District, Town Hall, Parking Lot, Back Yard, Vine Yard, Golf Course, Warehouse
+      t.string :home_type
       t.integer :bedrooms
       t.integer :bathrooms
       t.string :occupation
