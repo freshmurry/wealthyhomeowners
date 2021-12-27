@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
   before_action :set_home, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show, :preview]
-  before_action :is_authorized, only: [:listing, :pricing, :occupation, :photo_upload, :amenities, :location, :update]
+  before_action :is_authorized, only: [:listing, :pricing, :photo_upload, :amenities, :location, :update]
 
   def index
     @homes = current_user.homes
