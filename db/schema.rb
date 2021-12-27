@@ -43,10 +43,11 @@ ActiveRecord::Schema.define(version: 20200812042630) do
     t.string   "price"
     t.boolean  "active"
     t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "instant",             default: 1
     t.string   "company_name"
     t.string   "company_website"
     t.index ["user_id"], name: "index_homes_on_user_id"
