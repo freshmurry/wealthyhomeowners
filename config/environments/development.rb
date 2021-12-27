@@ -66,7 +66,7 @@ Rails.application.configure do
   config.web_console.whitelisted_ips << "10.240.0.0/16"
   
   #Required for Heroku
-  config.action_mailer.default_url_options = { host: 'https://9f143499177041dab60de7cf2ca34b9f.vfs.cloud9.us-east-1.amazonaws.com' }
+  config.action_mailer.default_url_options = { host: 'https://a0b53de61a5d45d2a7bb0364788b9c11.vfs.cloud9.us-east-1.amazonaws.com/' }
   
   #Mailgun Integration
   
