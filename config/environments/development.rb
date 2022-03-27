@@ -70,13 +70,25 @@ Rails.application.configure do
   
   #Mailgun Integration
   
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.mailgun.org',
+  #   port: 587 ,
+  #   domain: 'sandboxe2ffc76f2f4f40058be11a01d78ca90f.mailgun.org',
+  #   authentication: 'plain',
+  #   user_name: 'postmaster@sandboxe2ffc76f2f4f40058be11a01d78ca90f.mailgun.org',
+  #   password: 'c38b467561efe05af2d7ee8a7213157b-52b6835e-a24c8b21'
+  # }
+  
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'https://a0b53de61a5d45d2a7bb0364788b9c11.vfs.cloud9.us-east-1.amazonaws.com/' }
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mailgun.org',
-    port: 587 ,
-    domain: 'sandboxe2ffc76f2f4f40058be11a01d78ca90f.mailgun.org',
-    authentication: 'plain',
-    user_name: 'postmaster@sandboxe2ffc76f2f4f40058be11a01d78ca90f.mailgun.org',
-    password: 'c38b467561efe05af2d7ee8a7213157b-52b6835e-a24c8b21'
+        :address => "smtp.gmail.com",
+        :port => 587,
+        :domain => 'sandboxe2ffc76f2f4f40058be11a01d78ca90f.mailgun.org',
+        :user_name => "postmaster@sandboxe2ffc76f2f4f40058be11a01d78ca90f.mailgun.org",
+        :password => "c38b467561efe05af2d7ee8a7213157b-52b6835e-a24c8b21",
+        :authentication => :plain,
+        :enable_starttls_auto => true
   }
 end
